@@ -8,6 +8,7 @@ import lombok.Data;
 
 @Data
 public class FruitDTO {
+	private Integer fid;
 	private String fname;
 	private Integer price;
 	private Integer qty;
@@ -18,4 +19,5 @@ public class FruitDTO {
 	*/
 	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
 	private Date exp_date;
+	private Integer location_id;
 }
