@@ -24,8 +24,14 @@
 				th:data-remain-qty="${fruitOrder.qty}">판매!</button>
 		</div>
 	</div>	
-	
-	<script th:src="@{/fruitOrder/js/list.js}"></script>
+		
+	   <!-- post를 받기 위해서 form을 넣어준다 -->
+	   <!-- Postmapping에서 sale로 정해놨다 -->
+	   <form id="sale-form" action="sale" method="POST">
+	      <input type="hidden" name="fid" />
+	      <input type="hidden" name="qty" />
+	   </form>
+		<script th:src="@{/fruitOrder/js/list.js}"></script>
 	
 </body>
 </html>

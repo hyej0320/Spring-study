@@ -11,7 +11,7 @@ import com.ezen.springdata.mapper.EmployeesMapper;
 import lombok.RequiredArgsConstructor;
 
 
-@RequestMapping()
+@RequestMapping("/emp")
 @RequiredArgsConstructor
 @Controller
 public class EmployeesTestController {

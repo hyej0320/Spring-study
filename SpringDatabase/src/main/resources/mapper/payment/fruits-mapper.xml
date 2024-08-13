@@ -34,4 +34,15 @@
 	         (#{fid}, #{fname}, #{price}, #{qty}, sysdate + 7)
 	   </if>
    </insert>
+
+   <update id="reduceFruit" parameterType="java.util.HashMap">
+      UPDATE fruits SET qty = qty - #{qty} 
+      WHERE fid = #{fid}
+   </update>
+   
+   <insert id="addHistory" parameterType="java.util.HashMap">
+      INSERT INTO FruitSalesHistory(fhid, fid, qty)
+      VALUES (fhistory_fhid_seq.nextval, #{fid}, #{qty})
+   </insert>
+   
 </mapper>
