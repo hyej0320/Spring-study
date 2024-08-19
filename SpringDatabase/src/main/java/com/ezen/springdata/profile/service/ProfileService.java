@@ -23,7 +23,7 @@ public class ProfileService {
 	public void save(ProfileImageDTO profileImageDTO) throws IllegalStateException, IOException {
 		// 1. 클라이언트로부터 전달 받은 파일을 서버 컴퓨터에 내보내기
 		MultipartFile profileImageFile = profileImageDTO.getProfileImageFile();
-//		
+	
 //		if (profileImageFile == null) {
 //			return;
 //		}
@@ -33,7 +33,7 @@ public class ProfileService {
 	
 	public void multisave(ProfileImageDTO profileImageDTO) throws IllegalStateException, IOException {
 		List<MultipartFile> profileImageFiles = profileImageDTO.getProfileImageFiles();
-//		
+
 //		if (profileImageFiles == null || profileImageFiles.size() == 0) {
 //			return ;
 //		}
@@ -45,7 +45,8 @@ public class ProfileService {
 	String rootPath = "C:/spring_upload_files/";
 	
 	public void saveFile(MultipartFile profileImageFile) throws IllegalStateException, IOException {
-		
+		// 눌렀을 때 null이 저장되어 save()와 multisave()에 해 두었던 오류 처리를 옮김(?) 
+		// 데이터베이스 테이블 컬럼 Not null로 수정
 		if (profileImageFile == null || profileImageFile.isEmpty()) {
 			return ;
 		}
